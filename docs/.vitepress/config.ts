@@ -9,7 +9,8 @@ const description = await fetch("https://v1.hitokoto.cn")
 export default defineConfig({
   title: "编程猫海龟星球",
   description: description,
-
+  lang: "zh-CN",
+  base: "/",
   themeConfig: {
     logo: "/favicon.svg",
     nav: nav(),
