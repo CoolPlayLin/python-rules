@@ -2,21 +2,26 @@ import { defineConfig, type DefaultTheme } from "vitepress";
 import { resolve } from "node:path";
 import { readdirSync } from "node:fs";
 
-const description = await fetch("https://v1.hitokoto.cn")
-  .then((res) => res.json())
-  .then((data) => data.hitokoto);
+const description = async () => {
+  try {
+    return await fetch("https://v1.hitokoto.cn")
+      .then((res) => res.json())
+      .then((data) => data.hitokoto);
+  } catch (error) {
+    console.error("Unable to fetch description, use default value instead")
+    return "一蓑烟雨任平生";
+  }
+}
 
 export default defineConfig({
   title: "编程猫海龟星球",
-  description: description,
-  lang: "zh-CN",
-  base: "/",
+  description: await description(),
   themeConfig: {
     logo: "/favicon.svg",
     nav: nav(),
     sidebar: {
-      "/article/": sidebarArticle(),
-      "/policy/": sidebarPolicy(),
+      "/article/": { base: "/article/", items: sidebarArticle() },
+      "/policy/": { base: "/policy/", items: sidebarPolicy() },
     },
     footer: {
       message: "Released under the Attribution 4.0 International.",
@@ -26,6 +31,21 @@ export default defineConfig({
       prev: "上一页",
       next: "下一页",
     },
+
+    outline: {
+      label: "页面导航",
+    },
+
+    lastUpdated: {
+      text: "最后更新于",
+    },
+
+    langMenuLabel: "多语言",
+    returnToTopLabel: "回到顶部",
+    sidebarMenuLabel: "菜单",
+    darkModeSwitchLabel: "主题",
+    lightModeSwitchTitle: "切换到浅色模式",
+    darkModeSwitchTitle: "切换到深色模式",
   },
 });
 
@@ -49,7 +69,7 @@ function sidebarPolicy(): DefaultTheme.SidebarItem[] {
       items: [
         {
           text: "编程猫 Python 海龟星球群规",
-          link: "/policy/charter",
+          link: "charter",
         },
       ],
     },
@@ -58,15 +78,15 @@ function sidebarPolicy(): DefaultTheme.SidebarItem[] {
       items: [
         {
           text: "广告限制条例",
-          link: "/policy/advertisement",
+          link: "advertisement",
         },
         {
           text: "机器人保护条例",
-          link: "/policy/botProtection",
+          link: "botProtection",
         },
         {
           text: "Python代码临时管理规定(试行)",
-          link: "/policy/codePolicy",
+          link: "codePolicy",
         },
       ],
     },
@@ -75,7 +95,7 @@ function sidebarPolicy(): DefaultTheme.SidebarItem[] {
       items: [
         {
           text: "FISH BOT用户协议",
-          link: "/policy/botAgreements/FISH-20240206",
+          link: "botAgreements/FISH-20240206",
         },
       ],
     },
@@ -85,7 +105,7 @@ function sidebarPolicy(): DefaultTheme.SidebarItem[] {
         (dir) => {
           return {
             text: dir.replace(".md", ""),
-            link: `/policy/executiveOrders/${dir}`,
+            link: `executiveOrders/${dir}`,
           };
         }
       ),
@@ -100,7 +120,7 @@ function sidebarArticle(): DefaultTheme.SidebarItem[] {
       items: readdirSync(resolve("docs", "article")).map((dir) => {
         return {
           text: dir === "index.md" ? "首页" : dir.replace(".md", ""),
-          link: `/article/${dir}`,
+          link: dir,
         };
       }),
     },
