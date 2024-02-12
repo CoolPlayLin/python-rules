@@ -6,7 +6,7 @@
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "serve": "vitepress serve docs",
-    "cname": "echo 'rules.xfisxf.top' >> docs/.vitepress/dist/CNAME"
+    "cname": "echo rules.xfisxf.top >> docs/.vitepress/dist/CNAME"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
