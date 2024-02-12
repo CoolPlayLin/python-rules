@@ -8,15 +8,15 @@ const description = async () => {
       .then((res) => res.json())
       .then((data) => data.hitokoto);
   } catch (error) {
-    console.error("Unable to fetch description, use default value instead")
+    console.error("Unable to fetch description, use default value instead");
     return "一蓑烟雨任平生";
   }
-}
+};
 
 export default defineConfig({
   title: "编程猫海龟星球",
   description: await description(),
-  head: [['link', { rel: 'icon', href: '/turtleEditor.svg' }]],
+  head: [["link", { rel: "icon", href: "/turtleEditor.svg" }]],
   themeConfig: {
     logo: "/favicon.svg",
     nav: nav(),
@@ -54,11 +54,11 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     {
       text: "群规",
-      link: "/policy/charter",
+      link: "/policy/",
     },
     {
       text: "文章",
-      link: "/article/index",
+      link: "/article/",
     },
   ];
 }
@@ -68,6 +68,10 @@ function sidebarPolicy(): DefaultTheme.SidebarItem[] {
     {
       text: "主群规",
       items: [
+        {
+          text: "效力公告",
+          link: "/",
+        },
         {
           text: "编程猫 Python 海龟星球群规",
           link: "charter",

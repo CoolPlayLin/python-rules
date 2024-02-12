@@ -7,7 +7,7 @@ hero:
   actions:
     - theme: brand
       text: 立即查看
-      link: /policy/charter
+      link: /policy/
     - theme: alt
       text: Gitee
       link: https://gitee.com/CoolPlayLin/python-rules
