@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
-    "serve": "vitepress serve docs"
+    "serve": "vitepress serve docs",
+    "cname": "echo 'rules.xfisxf.top' >> docs/.vitepress/dist/CNAME"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
-    "vitepress": "1.0.0-alpha.28",
+    "vitepress": "1.0.0-rc.42",
     "vue": "3.2.44"
   },
   "pnpm": {

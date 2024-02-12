@@ -42,7 +42,7 @@ function nav(): DefaultTheme.NavItem[] {
   ];
 }
 
-function sidebarPolicy(): DefaultTheme.SidebarGroup[] {
+function sidebarPolicy(): DefaultTheme.SidebarItem[] {
   return [
     {
       text: "主群规",
@@ -93,7 +93,7 @@ function sidebarPolicy(): DefaultTheme.SidebarGroup[] {
   ];
 }
 
-function sidebarArticle(): DefaultTheme.SidebarGroup[] {
+function sidebarArticle(): DefaultTheme.SidebarItem[] {
   return [
     {
       text: "文章",
