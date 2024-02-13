@@ -109,15 +109,21 @@ function sidebarPolicy(): DefaultTheme.SidebarItem[] {
     },
     {
       text: "执行命令",
-      items: sortByDateAndNumber(
-        readdirSync(resolve("docs", "policy", "executiveOrders")),
-        [".md"]
-      ).map((dir) => {
-        return {
-          text: dir.replace(".md", ""),
-          link: `executiveOrders/${dir}`,
-        };
-      }),
+      base: "/policy/executiveOrders/",
+      items: [
+        { text: "执行命令条例", link: "/" },
+        ...sortByDateAndNumber(
+          readdirSync(resolve("docs", "policy", "executiveOrders")).filter(
+            (value) => value !== "index.md"
+          ),
+          [".md"]
+        ).map((dir) => {
+          return {
+            text: dir.replace(".md", ""),
+            link: dir,
+          };
+        }),
+      ],
     },
   ];
 }

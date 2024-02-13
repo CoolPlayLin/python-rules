@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "编程猫海龟星球"
-  text: 编程猫海龟星球公示处及博客
+  text: 公示处及博客
   actions:
     - theme: brand
       text: 立即查看
