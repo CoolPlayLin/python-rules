@@ -106,14 +106,15 @@ function sidebarPolicy(): DefaultTheme.SidebarItem[] {
     },
     {
       text: "执行命令",
-      items: readdirSync(resolve("docs", "policy", "executiveOrders")).map(
-        (dir) => {
-          return {
-            text: dir.replace(".md", ""),
-            link: `executiveOrders/${dir}`,
-          };
-        }
-      ),
+      items: sortByDateAndNumber(
+        readdirSync(resolve("docs", "policy", "executiveOrders")),
+        [".md"]
+      ).map((dir) => {
+        return {
+          text: dir.replace(".md", ""),
+          link: `executiveOrders/${dir}`,
+        };
+      }),
     },
   ];
 }
@@ -130,4 +131,27 @@ function sidebarArticle(): DefaultTheme.SidebarItem[] {
       }),
     },
   ];
+}
+
+function sortByDateAndNumber(arr: string[], removeValues: string[]) {
+  for (let removeValue of removeValues) {
+    arr = arr.map((value) => value.replace(removeValue, ""));
+  }
+  return arr.sort((preValue, currentValue) => {
+    const preParts = preValue.split("-");
+    const preDate = Number(preParts[0]);
+    const preNumber = Number(preParts[1]);
+
+    const currentParts = currentValue.split("-");
+    const currentDate = Number(currentParts[0]);
+    const currentNumber = Number(currentParts[1]);
+
+    if (preDate !== currentDate) {
+      // 如果年份不同，按年份降序排列
+      return currentDate - preDate;
+    } else {
+      // 如果年份相同，按数字升序排列
+      return currentNumber - preNumber;
+    }
+  });
 }
