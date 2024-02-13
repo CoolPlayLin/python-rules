@@ -16,7 +16,10 @@ const description = async () => {
 export default defineConfig({
   title: "编程猫海龟星球",
   description: await description(),
-  head: [["link", { rel: "icon", href: "/turtleEditor.svg" }]],
+  head: [
+    ["link", { rel: "icon", href: "/turtleEditor.svg" }],
+    ["link", { rel: "stylesheet", href: "/styles/font.css" }],
+  ],
   themeConfig: {
     logo: "/favicon.svg",
     nav: nav(),

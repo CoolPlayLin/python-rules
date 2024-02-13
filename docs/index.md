@@ -18,10 +18,10 @@ hero:
 
 <style>
 :root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, rgb(236, 43, 36), rgb(251, 185, 41));
-
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, rgb(41, 183, 203) 50%, rgb(252, 211, 55) 50%);
-  --vp-home-hero-image-filter: blur(50px);
-}
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: -webkit-linear-gradient(120deg, rgb(236, 43, 36), rgb(251, 185, 41));
+  
+    --vp-home-hero-image-background-image: linear-gradient(-45deg, rgb(41, 183, 203) 50%, rgb(252, 211, 55) 50%);
+    --vp-home-hero-image-filter: blur(50px);
+  }
 </style>
