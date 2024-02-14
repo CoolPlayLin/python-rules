@@ -17,13 +17,3 @@
 - [机器人保护条例](/policy/botProtection) (注意！如果由机器人公约，你需要在确认收到群规的机器人公约后才可以使用相应的机器人)
 
 - [执行命令条例](/policy/executiveOrders/)
-
-### 群规源文件
-
-- 主站: https://gitee.com/coolplaylin/python-rules
-
-- 镜像: https://github.com/coolplaylin/python-rules
-
-### Python 文档
-
-https://docs.python.org/zh-cn/3
