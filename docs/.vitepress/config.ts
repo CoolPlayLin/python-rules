@@ -105,6 +105,10 @@ function sidebarPolicy(): DefaultTheme.SidebarItem[] {
           text: "FISH BOT用户协议",
           link: "botAgreements/FISH-20240206",
         },
+        {
+          text: "听风bot 用户协议",
+          link: "botAgreements/TingFeng-20240216.md"
+        }
       ],
     },
     {
