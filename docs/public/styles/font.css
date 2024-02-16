@@ -1,6 +1,13 @@
 @font-face {
   font-family: "FZXingHeiJW";
-  src: url("/fonts/FZXingHeiJW-DB.TTF") format("truetype");
+  src:
+    url("/fonts/FZXingHeiJW-DB.TTF") format("truetype"),
+    url("/fonts/FZXingHeiJW.TTF") format("truetype"),
+    url("/fonts/FZXingHeiJW-B.TTF") format("truetype"),
+    url("/fonts/FZXingHeiJW-L.TTF") format("truetype"),
+    url("/fonts/FZXingHeiJW-M.TTF") format("truetype"),
+    url("/fonts/FZXingHeiJW-EB.TTF") format("truetype"),
+    url("/fonts/FZXingHeiJW-R.TTF") format("truetype");
 
   /* Add additional font formats if needed */
 }
