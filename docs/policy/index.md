@@ -16,4 +16,4 @@
 
 - [机器人保护条例](/policy/botProtection) (注意！如果由机器人公约，你需要在确认受到群规的机器人公约后才可以使用相应的机器人)
 
-- [执行命令条例](/policy/executiveOrders/)
+- [执行命令条例](/policy/executiveOrders/executiveOrder)

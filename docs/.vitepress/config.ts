@@ -115,10 +115,10 @@ function sidebarPolicy(): DefaultTheme.SidebarItem[] {
       text: "执行命令",
       base: "/policy/executiveOrders/",
       items: [
-        { text: "执行命令条例", link: "/" },
+        { text: "执行命令条例", link: "executiveOrder" },
         ...sortByDateAndNumber(
           readdirSync(resolve("docs", "policy", "executiveOrders")).filter(
-            (value) => value !== "index.md"
+            (value) => value !== "executiveOrder.md"
           ),
           [".md"]
         ).map((dir) => {
