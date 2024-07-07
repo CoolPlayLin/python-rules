@@ -10,10 +10,10 @@
     "format": "prettier --write --cache docs/**/*.md"
   },
   "devDependencies": {
-    "@types/node": "^20.11.17",
-    "prettier": "^3.2.5",
-    "vitepress": "1.0.0-rc.42",
-    "vue": "3.4.18"
+    "@types/node": "^20.14.10",
+    "prettier": "^3.3.2",
+    "vitepress": "^1.2.3",
+    "vue": "^3.4.31"
   },
   "pnpm": {
     "peerDependencyRules": {
