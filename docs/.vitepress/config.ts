@@ -57,11 +57,13 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     {
       text: "群规",
-      link: "/policy/",
+      link: "/policy/statement",
+      activeMatch: "^/policy/",
     },
     {
       text: "文章",
       link: "/article/",
+      activeMatch: "^/article/"
     },
   ];
 }
@@ -73,7 +75,7 @@ function sidebarPolicy(): DefaultTheme.SidebarItem[] {
       items: [
         {
           text: "效力公告",
-          link: "/",
+          link: "statement",
         },
         {
           text: "编程猫 Python 海龟星球群规",
@@ -118,7 +120,7 @@ function sidebarPolicy(): DefaultTheme.SidebarItem[] {
         { text: "执行命令条例", link: "executiveOrder" },
         ...sortByDateAndNumber(
           readdirSync(resolve("docs", "policy", "executiveOrders")).filter(
-            (value) => value !== "executiveOrder.md"
+            (value) => value !== "statement.md"
           ),
           [".md"]
         ).map((dir) => {

@@ -16,4 +16,4 @@
 
 - [机器人保护条例](/policy/botProtection)
 
-- [执行命令条例](/policy/executiveOrders/executiveOrder)
+- [执行命令条例](/policy/executiveOrders/statement)
