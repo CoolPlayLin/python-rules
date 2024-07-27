@@ -120,7 +120,7 @@ function sidebarPolicy(): DefaultTheme.SidebarItem[] {
         { text: "执行命令条例", link: "executiveOrder" },
         ...sortByDateAndNumber(
           readdirSync(resolve("docs", "policy", "executiveOrders")).filter(
-            (value) => value !== "executiveOrder.md"
+            (value) => value !== "statement.md"
           ),
           [".md"]
         ).map((dir) => {
